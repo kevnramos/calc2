@@ -1,12 +1,18 @@
 """Testing the Calculator"""
 
 from calculator.main import Calculator
+from calculator.main import inc
 
 
 def test_calculator_result():
     """testing calculator result is 0"""
     calc = Calculator()
     assert calc.result == 0
+
+
+def test_calculator_inc():
+    """Testing the inc function of the calculator"""
+    assert inc(4) == 5
 
 
 def test_calculator_add():
