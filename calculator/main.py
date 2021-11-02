@@ -11,29 +11,37 @@ class Calculator:
 
     result = 0
 
-    def get_result(self):
-        """ Get Result of Calculation"""
-        return self.result
+    history = []
 
-    def add_number(self, value_a):
+    # @staticmethod
+    # def get_result(self):
+    #     """ Get Result of Calculation"""
+    #     return self.result
+
+    @staticmethod
+    def add_number(value_a, value_b):
         """ adds number to result"""
-        self.result = self.result + value_a
-        return self.result
+        result = value_a + value_b
 
-    def subtract_number(self, value_a):
+        return result
+
+    @staticmethod
+    def subtract_number(value_a, value_b):
         """ subtract number from result"""
-        self.result = self.result - value_a
-        return self.result
+        result = value_a - value_b
+        return result
 
-    def multiply_number(self, value_a):
+    @staticmethod
+    def multiply_number(value_a, value_b):
         """ multiply number from result"""
-        self.result = self.result * value_a
-        return self.result
+        result = value_a * value_b
+        return result
 
-    def divide_number(self, value_a):
+    @staticmethod
+    def divide_number(value_a, value_b):
         """ divide number from result"""
         try:
-            self.result = self.result / value_a
-            return self.result
+            result = value_a / value_b
+            return result
         except ZeroDivisionError:
             return ZeroDivisionError
