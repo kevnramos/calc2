@@ -11,4 +11,5 @@ branches:
   only:
     - main
     - master
+    - refactor
     - development
