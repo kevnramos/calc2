@@ -1,5 +1,5 @@
 """Multiplication Class"""
-from calc.calculations.calculation import Calculation
+from calc.math_operations.calculation import Calculation
 
 
 class Multiplication(Calculation):

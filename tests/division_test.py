@@ -1,5 +1,5 @@
 """Testing Division"""
-from calc.calculations.division import Division
+from calc.math_operations.division import Division
 
 
 def test_calculation_division():
