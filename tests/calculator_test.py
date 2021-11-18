@@ -70,3 +70,5 @@ def test_get_calculation(clear_history_fixture):
 def test_get_calculation_last(clear_history_fixture):
     Calculator.add_numbers(1.0, 2.0)
     assert Calculator.get_calculation_last().get_result() == 3
+
+#docker run --domainname image_name -dp 80:80 docker.io/repo_name
