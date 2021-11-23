@@ -7,9 +7,9 @@ class Calculation:
 
     def __init__(self, values: tuple):
         """ constructor method"""
-        self.values = Calculation.convert_args_to_list_float(values)
+        self.values = Calculation.tuple_to_list(values)
 
     @staticmethod
-    def convert_args_to_list_float(values):
+    def tuple_to_list(values):
         """ standardize values to list of floats"""
         return list(values)
