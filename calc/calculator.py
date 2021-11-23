@@ -14,7 +14,7 @@ class Calculator:
         """ adds list of numbers"""
         addition = Addition(args)
         Calculator.history.append(addition)
-        return addition.get_result()
+        return addition.get()
 
     @staticmethod
     def clear_history():
@@ -37,18 +37,18 @@ class Calculator:
         """ subtract a list of numbers from result"""
         subtraction = Subtraction(args)
         Calculator.history.append(subtraction)
-        return subtraction.get_result()
+        return subtraction.get()
 
     @staticmethod
     def multiply_numbers(*args):
         """ multiplication number from result"""
         multiplication = Multiplication(args)
         Calculator.history.append(multiplication)
-        return multiplication.get_result()
+        return multiplication.get()
 
     @staticmethod
     def divide_numbers(*args):
         """ division number from result"""
         division = Division(args)
         Calculator.history.append(division)
-        return division.get_result()
+        return division.get()

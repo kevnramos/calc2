@@ -22,12 +22,12 @@ def test_calculator_add_static_multiple(clear_history_fixture):
 
 def test_calculator_subtract_static(clear_history_fixture):
     """Testing the subtract method of the calc"""
-    assert Calculator.subtract_numbers(1.0, 2.0) == -3.0
+    assert Calculator.subtract_numbers(1.0, 2.0) == -1.0
 
 
 def test_calculator_subtract_static_multiple(clear_history_fixture):
     """Testing the subtract method of the calc"""
-    assert Calculator.subtract_numbers(10.0, 2.0, 3.0) == -15.0
+    assert Calculator.subtract_numbers(10.0, 2.0, 3.0) == 5.0
 
 
 def test_calculator_multiply_static(clear_history_fixture):
@@ -64,11 +64,11 @@ def test_clear_history():
 
 def test_get_calculation(clear_history_fixture):
     Calculator.add_numbers(1.0, 2.0)
-    assert Calculator.get_calculation(0).get_result() == 3
+    assert Calculator.get_calculation(0).get() == 3
 
 
 def test_get_calculation_last(clear_history_fixture):
     Calculator.add_numbers(1.0, 2.0)
-    assert Calculator.get_calculation_last().get_result() == 3
+    assert Calculator.get_calculation_last().get() == 3
 
 #docker run --domainname image_name -dp 80:80 docker.io/repo_name
