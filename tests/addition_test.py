@@ -6,16 +6,16 @@ from Reader_CSV.reader import CsvReader
 def testing_csv_small():
     test_file = CsvReader("tests/operation_files_test/addition_small.csv").data
     for i in test_file:
-        my_tuple = (i[0])
+        tup = (i[0])
         result = i[1]
-        addition = Addition(my_tuple)
+        addition = Addition(tup)
         assert addition.get() == result
 
 
 def testing_csv_big():
     test_file = CsvReader("tests/operation_files_test/addition_big.csv").data
     for i in test_file:
-        my_tuple = (i[0])
+        tup = (i[0])
         result = i[1]
-        addition = Addition(my_tuple)
+        addition = Addition(tup)
         assert addition.get() == result
