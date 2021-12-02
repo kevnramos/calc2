@@ -16,7 +16,12 @@ class Calculator:
         return True
 
     @staticmethod
-    def get_all_calculations(num):
+    def get_first_calculation():
+        """ get first calculation from history"""
+        return Calculator.history[0]
+
+    @staticmethod
+    def get_specified_calculation(num):
         """ get a specific calculation from history"""
         return Calculator.history[num]
 
@@ -26,28 +31,33 @@ class Calculator:
         return Calculator.history[-1]
 
     @staticmethod
-    def add_nums(*args):
+    def get_size_of_history():
+        """length of history list"""
+        return len(Calculator.history)
+
+    @staticmethod
+    def add(*args):
         """ adds list of numbers"""
         addition = Addition(args)
         Calculator.history.append(addition)
         return addition.get()
 
     @staticmethod
-    def subtract_nums(*args):
+    def subtract(*args):
         """ subtract a list of numbers from result"""
         subtraction = Subtraction(args)
         Calculator.history.append(subtraction)
         return subtraction.get()
 
     @staticmethod
-    def multiply_nums(*args):
+    def multiply(*args):
         """ multiplication number from result"""
         multiplication = Multiplication(args)
         Calculator.history.append(multiplication)
         return multiplication.get()
 
     @staticmethod
-    def divide_nums(*args):
+    def divide(*args):
         """ division number from result"""
         division = Division(args)
         Calculator.history.append(division)
