@@ -4,6 +4,9 @@ from calc.math_operations.addition import Addition
 from Reader_CSV.reader import CsvReader
 from Writer_CSV.writer import CsvWriter
 
+data = ['', '', '', '', '']
+CsvWriter("./results/test_log.csv", 'w', data, True)
+
 
 def testing_csv_small():
     """Testing add csv"""

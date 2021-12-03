@@ -1,9 +1,11 @@
-from Writer_CSV.writer import CsvWriter
+"""this will run all tests, write logs, move files, and reset files"""
 import os
 import time
+from Writer_CSV.writer import CsvWriter
 
 
 def run():
+    """This will run tests and make log files"""
     print("Writing headers...")
     dataframe = ['', '', '', '', '']
     CsvWriter("./results/test_log.csv", 'w', dataframe, True)
@@ -31,6 +33,7 @@ def run():
 
 
 def reset():
+    """this will reset the file structure and move csv files back to where they were"""
     os.system('mv tests/done_scan/* tests/operation_files_test/')
 
 
