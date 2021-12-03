@@ -8,7 +8,7 @@
 
 [CSV_Writer](https://github.com/kevnramos/calc2/blob/csv_with_main/Writer_CSV/writer.py)
 
-[CSV_Reader](https://github.com/kevnramos/calc2/blob/csv_with_main/Reader_CSV/reader.pyhttps://github.com/kevnramos/calc2/blob/csv_with_main/Reader_CSV/reader.py)
+[CSV_Reader](https://github.com/kevnramos/calc2/blob/csv_with_main/Reader_CSV/reader.py)
 
 ### Linting
 ![](lint_success.png)
