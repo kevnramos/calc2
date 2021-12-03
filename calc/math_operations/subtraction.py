@@ -1,6 +1,4 @@
 """Subtraction Class"""
-import pprint
-
 from calc.math_operations.calculation import Calculation
 
 

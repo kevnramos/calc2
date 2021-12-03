@@ -1,6 +1,6 @@
 """Multiplication Class"""
-from calc.math_operations.calculation import Calculation
 import numpy
+from calc.math_operations.calculation import Calculation
 
 
 class Multiplication(Calculation):

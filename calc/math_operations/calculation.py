@@ -1,8 +1,7 @@
 """Calculation Class"""
-import pprint
 
 
-class Calculation:
+class Calculation: # pylint: disable=too-few-public-methods
     """ calculation abstract base class"""
 
     def __init__(self, values: tuple):

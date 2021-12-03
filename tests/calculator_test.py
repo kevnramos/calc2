@@ -1,3 +1,4 @@
+# pylint: disable-all
 """Testing the Calculator"""
 import pytest
 from calc.calculator import Calculator
@@ -9,31 +10,6 @@ def clear_history_fixture():
     return Calculator.clear()
 
 
-# @pytest.fixture
-# def default_test():
-#     return Calculator.add_nums(34, 75)
-#     return Calculator.subtract_nums(34, 75)
-#     return Calculator.multiply_nums(34, 75)
-#     return Calculator.divide_nums(10, 100)
-#     return Calculator.divide_nums(10, 0)
-
-
-# def test_history(clear_history_fixture, default_test):
-#     assert Calculator.get_first_calculation() == default_test
-#     assert Calculator.get_last_calculation() == ZeroDivisionError
-#     assert Calculator.get_specified_calculation(0) == 109
-#     assert Calculator.get_specified_calculation(1) == -41
-#     assert Calculator.get_specified_calculation(2) == 2550
-#     assert Calculator.get_specified_calculation(3) == .1
-#     assert Calculator.get_specified_calculation(4) == ZeroDivisionError
-#     assert Calculator.splice_history(0, 3) == [109, -41, 2550, .1]
-#     assert Calculator.get_size_of_history() == 5
-#
-#     Calculator.clear()
-#     assert Calculator.get_size_of_history() == 0
-#     assert Calculator.clear() == True
-
-# You have to add the fixture function as a parameter to the test that you want to use it with
 def test_calculator_add_static(clear_history_fixture):
     """testing that our calculator has a static method for addition"""
     assert Calculator.add(1.0, 11.0) == 12.0
