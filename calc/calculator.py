@@ -36,21 +36,21 @@ class Calculator:
         return len(Calculator.history)
 
     @staticmethod
-    def add(*args):
+    def addition(*args):
         """ adds list of numbers"""
         addition = Addition(args)
         Calculator.history.append(addition)
         return addition.get()
 
     @staticmethod
-    def subtract(*args):
+    def subtraction(*args):
         """ subtract a list of numbers from result"""
         subtraction = Subtraction(args)
         Calculator.history.append(subtraction)
         return subtraction.get()
 
     @staticmethod
-    def multiply(*args):
+    def multiplication(*args):
         """ multiplication number from result"""
         multiplication = Multiplication(args)
         Calculator.history.append(multiplication)

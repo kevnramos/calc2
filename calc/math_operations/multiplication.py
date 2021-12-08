@@ -1,5 +1,4 @@
 """Multiplication Class"""
-import numpy
 from calc.math_operations.calculation import Calculation
 
 
@@ -8,4 +7,7 @@ class Multiplication(Calculation):
 
     def get(self):
         """get the multiplication results"""
-        return numpy.prod(self.values)
+        result = 1.0
+        for value in self.values:
+            result = result * value
+        return result
