@@ -3,7 +3,7 @@ from calc.math_operations.calculation import Calculation
 
 
 class Multiplication(Calculation):
-    """Multiplication calculation object"""
+    """subtraction calculation object"""
 
     def get(self):
         """get the multiplication results"""

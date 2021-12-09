@@ -1,79 +1,104 @@
 # pylint: disable-all
 """Testing the Calculator"""
 import pytest
-from calc.calculator import Calculator
+from calc.history.calculations import Calculations
+from calc.math_operations.addition import Addition
+from calc.math_operations.subtraction import Subtraction
+from calc.math_operations.multiplication import Multiplication
+from calc.math_operations.division import Division
 
 
 @pytest.fixture
 def clear_history_fixture():
     """define a function that will run each time you pass it to a test, it is called a fixture"""
-    return Calculator.clear()
+    Calculations.clear_history()
 
 
-def test_calculator_add_static(clear_history_fixture):
-    """testing that our calculator has a static method for addition"""
-    assert Calculator.addition(1.0, 11.0) == 12.0
+@pytest.fixture
+def multiple_values_fixture():
+    """default addition"""
+    tup = (100, 10)
+    division = Division(tup)
+    Calculations.append_to_history(division)
+    tup = (11, 7)
+    addition = Addition(tup)
+    Calculations.append_to_history(addition)
+    subtraction = Subtraction(tup)
+    Calculations.append_to_history(subtraction)
+    multiplication = Multiplication(tup)
+    Calculations.append_to_history(multiplication)
 
 
-def test_calculator_add_static_multiple(clear_history_fixture):
-    """testing that our calculator has a static method for addition"""
-    assert Calculator.addition(1.0, 3.0, 44.0) == 48.0
+@pytest.fixture
+def addition_fixture():
+    """default addition"""
+    tup = (11, 7)
+    addition = Addition(tup)
+    Calculations.append_to_history(addition)
 
 
-def test_calculator_subtract_static(clear_history_fixture):
-    """Testing the subtract method of the calc"""
-    assert Calculator.subtraction(1.0, 2.0) == -1.0
+@pytest.fixture
+def subtraction_fixture():
+    """default subtraction"""
+    tup = (11, 7)
+    subtraction = Subtraction(tup)
+    Calculations.append_to_history(subtraction)
 
 
-def test_calculator_subtract_static_multiple(clear_history_fixture):
-    """Testing the subtract method of the calc"""
-    assert Calculator.subtraction(10.0, 2.0, 3.0) == 5.0
+@pytest.fixture
+def division_fixture():
+    """default division"""
+    tup = (100, 10)
+    division = Division(tup)
+    Calculations.append_to_history(division)
 
 
-def test_calculator_multiply_static(clear_history_fixture):
-    """Testing the multiply method of the calc"""
-    assert Calculator.multiplication(1.0, 2.0) == 2.0
+@pytest.fixture
+def multiplication_fixture():
+    """default multiplication"""
+    tup = (11, 7)
+    multiplication = Multiplication(tup)
+    Calculations.append_to_history(multiplication)
 
 
-def test_calculator_multiply_static_multiple(clear_history_fixture):
-    """Testing the multiply method of the calc"""
-    assert Calculator.multiplication(11.0, 2.0, 5.0) == 110.0
+def test_addition_history(clear_history_fixture, addition_fixture):
+    assert Calculations.count_history() == 1
 
 
-def test_calculator_divide_static(clear_history_fixture):
-    """Testing the divide method of the calc"""
-    assert Calculator.divide(125.0, 25.0) == 5.0
+def test_addition_values(clear_history_fixture, addition_fixture):
+    assert Calculations.get_calculation(0).get() == 18
+    assert Calculations.get_first_calculation().get() == 18
 
 
-def test_calculator_divide_static_mulitple(clear_history_fixture):
-    """Testing the divide method of the calc"""
-    assert Calculator.divide(725.0, 5.0, 20) == 7.25
+def test_subtraction_history(clear_history_fixture, subtraction_fixture):
+    assert Calculations.count_history() == 1
 
 
-def test_calculator_history_static_property(clear_history_fixture):
-    """Testing the length method of the calc"""
-    Calculator.addition(1.0, 2.0)
-    assert len(Calculator.history) == 1
+def test_subtraction_values(clear_history_fixture, subtraction_fixture):
+    assert Calculations.get_calculation(0).get() == 4
+    assert Calculations.get_first_calculation().get() == 4
 
 
-def test_clear_history():
-    """Testing clear history returns true for success"""
-    Calculator.addition(1.0, 2.0)
-    assert Calculator.clear() == True
+def test_division_history(clear_history_fixture, division_fixture):
+    assert Calculations.count_history() == 1
 
 
-def test_get_calculation(clear_history_fixture):
-    Calculator.addition(1.0, 2.0)
-    assert Calculator.get_specified_calculation(0).get() == 3
+def test_division_values(clear_history_fixture, division_fixture):
+    assert Calculations.get_calculation(0).get() == 10
+    assert Calculations.get_first_calculation().get() == 10
 
 
-def test_get_calculation_last(clear_history_fixture):
-    Calculator.addition(1.0, 2.0)
-    assert Calculator.get_last_calculation().get() == 3
+def test_multiplication_history(clear_history_fixture, multiplication_fixture):
+    assert Calculations.count_history() == 1
 
 
-def test_get_calculation_first(clear_history_fixture):
-    Calculator.addition(1.0, 22.0)
-    Calculator.addition(1.0, 2.0)
-    assert Calculator.get_first_calculation().get() == 23
-    assert Calculator.get_size_of_history() == 2
+def test_multiplication_values(clear_history_fixture, multiplication_fixture):
+    assert Calculations.get_calculation(0).get() == 77
+    assert Calculations.get_first_calculation().get() == 77
+
+
+def test_history(clear_history_fixture, multiple_values_fixture):
+    assert Calculations.get_first_calculation().get() == 10
+    assert Calculations.get_last_calculation_result_value() == 77
+    assert Calculations.get_calculation(1).get() == 18
+    assert Calculations.get_calculation(2).get() == 4
