@@ -7,6 +7,4 @@
 ### Addition on flask
 ![](add.png)
 
-### Error on flask
-![](error.png)
 
