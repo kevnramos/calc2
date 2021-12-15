@@ -12,3 +12,5 @@ ENV PATH="/home/myuser/.local/bin:${PATH}"
 COPY --chown=myuser:myuser . .
 RUN pip install -r requirements.txt
 CMD ["uwsgi", "app/app.ini"]
+RUN python3 app/create_fake_users.py 21
+RUN python3 app/bootstrap_table.py

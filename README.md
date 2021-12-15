@@ -2,11 +2,9 @@
 # IS218-005
 ## Fall 2021
 
-### Flask flash messaging
+### Beautiful Table
 
-### Addition on flask
-![](add.png)
+### Beautiful Table exampe
+![](beautiful_table.png)
 
-### Division on flask
-![](division.png)
 

@@ -10,7 +10,7 @@ app = Flask(__name__)
 def index():
     """index  Route Response"""
     return render_template('index.html')
-#
+
 
 @app.route("/basicform", methods=['GET', 'POST'])
 def basicform():
