@@ -1,20 +1,16 @@
 """controller app"""
 from flask import render_template, request, flash, redirect, url_for  # pylint: disable=import-error, unused-import
-from app.controllers.controller import ControllerBase  # pylint: disable=no-name-in-module
+from app.controllers.controller import ControllerBase
 from calc.calculator import Calculator
 
 
 class CalculatorController(ControllerBase):
-    """calculator controller"""
-    history = []
-
+    """controller"""
     @staticmethod
     def post():
-        """calculator functions"""
+        """post functions"""
         if request.form['value1'] == '' or request.form['value2'] == '':
             error = 'You must enter a value for value 1 and or value 2.'
-        if not request.form['value1'].isnumeric() or not request.form['value2'].isnumeric():
-            error = 'You must enter numeric values.'
         else:
             flash('Successful Calculation!')
 
@@ -27,10 +23,18 @@ class CalculatorController(ControllerBase):
             # this will call the correct operation
             getattr(Calculator, operation)(my_tuple)
             result = str(Calculator.get_last_calculation())
-            CalculatorController.history.append(result)
-            data = CalculatorController.history
 
-            return render_template('result.html', value1=value1, data=data, value2=value2, operation=operation,
+            data = {
+                'value1': [value1],
+                'value2': [value2],
+                'operation': [operation],
+                'result': [result]
+            }
+
+            Calculator.writeHistoryToCSV(data)
+
+            return render_template('result.html', value1=value1, data=Calculator.getHistoryFromCSV(), value2=value2,
+                                   operation=operation,
                                    result=result)  # pylint: disable=line-too-long
         return render_template('calculator2.html', error=error)
 

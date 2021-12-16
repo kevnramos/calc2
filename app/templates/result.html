@@ -37,19 +37,20 @@
 
             {% if data %}
             <table class="table">
-                <TR>
+                <tr>
                     <th scope="col">Result</th>
 
-                </TR>
+                </tr>
                 {% for item in data %}
                 <!--- This will not work you have to think about it--->
-                <TR>
+                <tr>
 
+                    <td>{{item[0]}}</td>
+                    <td>{{item[1]}}</td>
+                    <td>{{item[2]}}</td>
+                    <td>{{item[3]}}</td>
 
-                    <TD>{{ item }}</TD>
-
-
-                </TR>
+                </tr>
 
 
                 {% endfor %}

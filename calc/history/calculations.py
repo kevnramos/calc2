@@ -3,11 +3,25 @@ from calc.math_operations.addition import Addition
 from calc.math_operations.subtraction import Subtraction
 from calc.math_operations.multiplication import Multiplication
 from calc.math_operations.division import Division
+import pandas as pd
 
 
 class Calculations:
     """Calculations class manages the history of math_operations"""
     history = []
+
+    @staticmethod
+    def readHistoryFromCSV():
+        """Read the history from csv and put it into the history """
+        df = pd.read_csv("../../results/history.csv")
+        dd = pd.DataFrame(df)
+        return dd.values.tolist()
+
+    @staticmethod
+    def writeHistoryToCSV(data):
+        """Write the history to csv file"""
+        df = pd.DataFrame(data)
+        df.to_csv("../../results/history.csv", mode='a', header=False)
 
     # pylint: disable=too-few-public-methods
     @staticmethod
