@@ -8,6 +8,7 @@
 <hr>
 
 ### Video Demo
+[Link to video](https://youtu.be/RjZVfF1-eDI)
 
 
 ### Linting
