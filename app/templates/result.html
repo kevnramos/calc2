@@ -1,16 +1,66 @@
 {% extends "base.html" %}
 {% block title %}Index{% endblock %}
 {% block head %}
-    {{ super() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+</style>
 {% endblock %}
 {% block content %}
-    <h1>result</h1>
-    <strong>Value 1: </strong> {{ value1 }} <br>
-    <strong>Value 2: </strong> {{ value2 }} <br>
-    <strong>Operation: </strong> {{ operation }} <br>
-    <strong>Result: </strong> {{ result }}
+<div class="container bg-light">
+    <h1>Calculation Result</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="card bg-light">
+        <div class="card-body">
+            <strong>Value 1: </strong> {{ value1 }} <br>
+            <strong>Value 2: </strong> {{ value2 }} <br>
+            <strong>Operation: </strong> {{ operation }} <br>
+            <strong>Result: </strong> {{ result }}
+        </div>
+    </div>
+    <br>
 
+    <div class="card bg-light">
+        <div class="card-body">
+            <h4 class="card-title">Calculator History</h4>
+
+
+            {% if data %}
+            <table class="table">
+                <TR>
+                    <th scope="col">Result</th>
+
+                </TR>
+                {% for item in data %}
+                <!--- This will not work you have to think about it--->
+                <TR>
+
+
+                    <TD>{{ item }}</TD>
+
+
+                </TR>
+
+
+                {% endfor %}
+
+            </table>
+            {% else %}
+            <h5 class="text-danger">There are no calculations</h5>
+            {% endif %}
+        </div>
+    </div>
+    <br>
+
+</div>
 {% endblock %}

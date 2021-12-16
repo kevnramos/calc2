@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+<div class="container bg-light">
+    <br>
+    <h1 class="text-danger">AAA Testing</h1>
+
+    <h4>Arrange/Act/Assert</h4>
+    <hr>
+
+    <h4>The Pattern</h4>
+    <p>
+        Arrange-Act-Assert is a great way to set up your tests.
+    </p>
+
+    <p>
+        <b>Arrange</b> inputs and targets. Arrange steps should set up the test case. Does the test require any
+        objects or
+        special settings? Does it need to prep a database? Does it need to log into a web app? Handle all of these
+        operations at the start of the test.
+    </p>
+
+    <p>
+        <b>Act </b> on the target behavior. Act steps should cover the main thing to be tested. This could be
+        calling a function
+        or method, calling a REST API, or interacting with a web page. Keep actions focused on the target behavior.
+    </p>
+
+    <p>
+        <b>Assert</b> expected outcomes. Act steps should elicit some sort of response. Assert steps verify the
+        goodness or
+        badness of that response. Sometimes, assertions are as simple as checking numeric or string values. Other
+        times,
+        they may require checking multiple facets of a system. Assertions will ultimately determine if the test
+        passes
+        or fails.
+
+    </p>
+
+    <hr>
+
+    <h4>Making your first unit test</h4>
+    <p>Lets say we have a simple function like the built-in <code>abs()</code> function in python</p>
+    <p>The <code>abs()</code> function returns the absolute value of the specified number.</p>
+    <p>Here we have an example test that uses the three A's for unit testing</p>
+
+
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>def absolute_value_test():
+                <br>
+                &nbsp &nbsp #Arrange
+                <br>
+                &nbsp &nbsp negative = -11
+                <br>
+                <br>
+                &nbsp &nbsp #Act
+                <br>
+                &nbsp &nbsp result = abs(negative)
+                <br>
+                <br>
+                &nbsp &nbsp #Assert
+                <br>
+                &nbsp &nbsp assert result == 11
+            </code>
+        </div>
+    </div>
+
+    <hr>
+
+    <h4>Using External Data for testing</h4>
+
+    <p>You may want to test your code using large amounts of data to see if you run into any hiccups.</p>
+    <p>A perfect way to do this is by using CSV files, which is a text file who's columns are separated using
+        commas.
+        you can create csv file using excel and then process those file using a package called pandas.
+    </p>
+
+    <div class="card w-75">
+        <div class="card-header">
+            addition_sample.csv
+        </div>
+        <div class="card-body text-danger">
+            <code>value1,value2,result</code>
+            <br>
+            <code>574,189,763</code>
+            <br>
+            <code>2251,566,2817</code>
+            <br>
+            <code>2198,2037,4235</code>
+            <br>
+            <code>1814,2324,4138</code>
+            <br>
+            <code>1361,2024,3385</code>
+            <br>
+            <code>142,1846,1988</code>
+            <br>
+            <code>2031,2764,4795</code>
+            <br>
+            <code>1390,2212,3602</code>
+            <br>
+            <code>534,2975,3509</code>
+            <br>
+            <code>2947,2164,5111</code>
+            <br>
+            <code>2891,1212,4103</code>
+            <br>
+            <code>243,328,571</code>
+            <br>
+            <code>490,431,921</code>
+            <br>
+            <code>1576,428,2004</code>
+            <br>
+        </div>
+    </div>
+
+    <br>
+    <a class="btn btn-outline-danger"
+       href="https://github.com/kevnramos/calc2/blob/csv_refactoring/tests/operation_files_test/addition_small.csv">
+        Sample CSV file
+    </a>
+    <br>
+
+    <hr>
+    <h4>Using Pandas to process CSV files for testing</h4>
+    <p>First we need to install Pandas, to do so, simply run:</p>
+
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>pip install pandas</code>
+        </div>
+    </div>
+
+    <br>
+
+    <p>We can process a csv file by using the absolute path of a file as shown in the class below:</p>
+
+    <a class="btn btn-outline-danger"
+       href="https://github.com/kevnramos/calc2/blob/8ba2f9ccf489f753bf509d954b27620e2542ab1a/Reader_CSV/reader.py#L10-L25">
+        CSV processor
+    </a>
+    <br>
+    <br>
+    <p>As you can see in the above code, I append everything to a list, which makes it easier when writing my
+        tests.</p>
+
+    <p>I also use the names of the headers to access the data. The headers of the columns are simply the first lines
+        of the csv file.</p>
+    <p>In my unit tests I loop through the list I created in the CSV processor</p>
+
+    <a class="btn btn-outline-danger"
+       href="https://github.com/kevnramos/calc2/blob/8ba2f9ccf489f753bf509d954b27620e2542ab1a/tests/multiplication_test.py#L6-L12">
+        Multiplication test in calculator using csv
+    </a>
+    <br>
+    <br>
+    <p>As you can see, line 7 is <b>Arrange</b>, line 9 is <b>Act</b>, and line 12 is <b>Assert</b></p>
+
+    <br>
+    <br>
+
+</div>
+{% endblock %}

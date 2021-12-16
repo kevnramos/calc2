@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+<div class="container bg-light">
+    <br>
+    <h1 class="text-danger">Git</h1>
+
+    <h4>The Basic Git commands</h4>
+    <hr/>
+
+    <h3>Initializing a repository</h3>
+    <p>
+        First we want to initialize out git repository on our local machine
+    </p>
+    <p>
+        Make sure you are in the folder in which you want to initialize the
+        repository
+    </p>
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>git init</code>
+        </div>
+    </div>
+    <br/>
+
+    <h3>Adding files to stage them for commit</h3>
+    <p>
+        Before you make your first commit you can check what files have been
+        changed and can be added
+    </p>
+    <p>To do so, run:</p>
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>git status</code>
+        </div>
+    </div>
+    <br/>
+    <p>This should show the files that have not been staged for commit</p>
+    <p>To add all of your files so you can commit them, run:</p>
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>git add .</code>
+        </div>
+    </div>
+    <br/>
+    <p>
+        If you run <code>git status</code> again, you should see a message
+        like
+    </p>
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <pre class="content">
+â git status
+On branch master
+nothing to commit, working tree clean</pre
+            >
+        </div>
+    </div>
+    <br/>
+
+    <h3>Committing your files</h3>
+    <p>
+        Now we want to commit our files to basically save our changes in this
+        time machine we call git
+    </p>
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>git commit -m "Our first commit"</code>
+        </div>
+    </div>
+    <br/>
+    <p>Now our commit is saved to git</p>
+    <p>
+        If we want to see all our commits, we can do: <code>git log</code> and
+        we'll see something like this
+    </p>
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <pre>
+â git log
+commit 12345678987654321 (HEAD -> master)
+Author: FirstName LastName &lt;youremail@email.com&gt;
+Date:   Tue Sep 14 13:52:06 2021 -0400
+
+    Our first commit</pre
+            >
+        </div>
+    </div>
+
+    <br/>
+
+    <h3>Making Branches</h3>
+    <p>To make a branch and switch to that branch, you can do:</p>
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>git branch dev_test</code>
+            <br/>
+            <code>git checkout dev_test</code>
+        </div>
+    </div>
+    <br/>
+    <p>Or you can do a shortcut and do this</p>
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>git checkout -b dev_test</code>
+        </div>
+    </div>
+    <br/>
+
+    <h3>Pushing to a remote repository</h3>
+    <p>Once you have added and committed your files, you can push them to a remote repository</p>
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>git push origin/main</code>
+        </div>
+    </div>
+    <br/>
+
+    <br/><br/>
+</div>
+
+{% endblock %}

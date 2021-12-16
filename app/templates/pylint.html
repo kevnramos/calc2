@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+<div class="container bg-light">
+    <br>
+    <h1 class="text-danger">Pylint</h1>
+    <h4>Tips for beginners</h4>
+    <hr>
+
+    <h4>The importance of Testing</h4>
+    <p>Testing your code is one of the foundations of good programming</p>
+    <p>This can easily be done using a package in python called Pytest. First we will check if pytest is installed
+        by running:
+    </p>
+
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>pytest --version</code>
+        </div>
+    </div>
+    <br>
+    <p>If the above does not give an output like <code>pytest 6.2.5</code> then you will have to install pytest by
+        running the following command:
+    </p>
+
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>pip install pytest</code>
+        </div>
+    </div>
+
+    <hr>
+
+    <h4>Linting with pytest</h4>
+    <p>A linter is "a static code analysis tool used to flag programming errors, bugs, stylistic errors and
+        suspicious constructs."</p>
+    <p>It helps you keep your code up to standard, and keeps the code throughout your codebase looking
+        consistent</p>
+    <p>Luckily there is a linter included with pytest, which we just installed.</p>
+    <p>To lint your program, simply run: </p>
+
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>pytest --pylint</code>
+        </div>
+    </div>
+
+    <hr>
+
+    <h4>Testing your code coverage</h4>
+    <p>The tests you write should cover all the statements and methods, you've written throughout your program</p>
+    <p>This is called hitting all of your 'branches'</p>
+    <p>To test your code coverage, simply run:</p>
+
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>pytest --cov</code>
+        </div>
+    </div>
+
+    <br>
+    <p>You can also easily lint and test your code coverage at the same time by simply running:</p>
+
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>pytest --pylint --cov</code>
+        </div>
+    </div>
+
+    <hr>
+    <h4>Glossary of OOP Terms</h4>
+    <br>
+    <p><b>Factory: </b>A factory, as the name suggests, is an object that builds other objects.
+    </p>
+
+    <p><b>Instantiation: </b>Instantiation is when we create an object ourselves.
+        For example a class Parrot, is instantiated with <code>blu = Parrot("Blu", 10)</code>
+    </p>
+
+    <p><b>Class: </b>A Class is code specifying a particular object in a program or application.
+    </p>
+
+    <p><b>Object: </b>An object can be many things in programming. It can be a variable, an array, a function, a method,
+        etc.
+        A class is even an example of an object.
+    </p>
+
+    <p><b>Namespace: </b>A namespace is a scope that identifies types, functions, variables, etc. This helps organize
+        code
+        and prevent name collisions.
+    </p>
+
+    <p><b>Constructor: </b>It is a subroutine of a class used to create an object of that class.
+    </p>
+
+    <p><b>Fixture: </b>A fixture is something regarding testing and predefines values used to run tests.
+    </p>
+
+    <p><b>Type Hint: </b>Type hinting shows you the type of value in your python code which lets you know what you
+        are working with so you know how to manipulate it if needed.
+    </p>
+
+    <p><b>Type Cast: </b>This allows for the conversion of types in python.
+    </p>
+
+    <p><b>Unit Test: </b>Unit testing is testing your code in small units.
+    </p>
+
+    <p><b>Static: </b>Being static means method or the variable is the same regardless
+        of the instance of the object. Meaning the class does not have to be
+        instantiated.
+    </p>
+
+    <p><b>Class Method: </b>A class method is a method that is tied to the class itself and
+        not an object of the class.
+    </p>
+
+    <p><b>Design Patterns Used: </b>In object-oriented programming there are many design patterns.
+        Facade, which hides a program's complexity. Encapsulation, which only gives access
+        to certain methods and variables.
+    </p>
+
+    <p><b>Facade: </b>A facade in object-oriented programming is a design patttern
+        used to hide the complexities behind a program. Similar to what a facade is
+        in architecture, it provides a pretty and simple interface for the user.
+    </p>
+
+    <p><b>Method: </b>Methods are functions defined inside of a class. They can define properties
+        of an object
+    </p>
+
+    <p><b>Property: </b>Properties are characteristics of an object or class.
+    </p>
+
+    <p><b>Encapsulation: </b>Encapsulation allows us to hide and show specific methods and
+        variables we want. We don't always want our methods or variables to be exposed to the user
+        and easily modifiable.
+    </p>
+
+
+    <br>
+    <br>
+
+</div>
+{% endblock %}

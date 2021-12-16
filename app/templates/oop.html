@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+<div class="container bg-light">
+    <br>
+    <h1 class="text-danger">OOP</h1>
+    <h4>Encapsulation, Inheritance, Polymorphism, and Abstraction</h4>
+    <hr>
+
+    <h4>Encapsulation</h4>
+    <p>Encapsulation is the idea of grouping data and methods that work together within one unit.</p>
+    <p>To change the value of an object within a class, you have to do it using that specific classes method</p>
+    <p>A class itself is an example of encapsulation. A class holds different methods and variables withing itself,
+        demonstrating encapsulation</p>
+
+    <a class="btn btn-outline-danger"
+       href="https://github.com/kevnramos/calc2/blob/8ba2f9ccf489f753bf509d954b27620e2542ab1a/calc/math_operations/addition.py#L5-L10">
+        Example of Encapsulation in Calculator program
+    </a>
+    <br>
+
+    <hr>
+
+
+    <h4>Inheritance</h4>
+    <p>Inheritance, in object-oriented programming, inheritance is the proccess of basing an object or class upon
+        another object or class.
+    </p>
+    <p>For example a rectangle class can inherit the square class, because a rectangle is a class, but a square is
+        not a rectangle
+    </p>
+
+    <p>Inheritance helps reduce redundancy throughout our calculator program. Instead of solely basing each
+        attribute of the calculator in separate places, we use inheritance to basically build the calculator in one
+        place, <code>calculator.py</code>
+    </p>
+
+    <a class="btn btn-outline-danger"
+       href="https://github.com/kevnramos/calc2/blob/8ba2f9ccf489f753bf509d954b27620e2542ab1a/calc/math_operations/multiplication.py#L6-L11">
+        Example of inheritance, Parent
+    </a>
+
+    <br>
+    <br>
+
+    <a class="btn btn-outline-danger"
+       href="https://github.com/kevnramos/calc2/blob/8ba2f9ccf489f753bf509d954b27620e2542ab1a/calc/calculator.py#L42-L47">
+        Example of inheritance, Child
+    </a>
+
+
+    <hr>
+
+    <h4>Polymorphism</h4>
+    <hr>
+    <p>In the simplest way possible, polymorphism is basically an overloaded function.</p>
+    <p>As you can see in the example code below from <a class="text-danger"
+                                                        href="https://www.geeksforgeeks.org/polymorphism-in-java/">geeksforgeeks.org</a>
+        <br>
+        The function <code>Multiply()</code> in the class <code>MultiplyFun</code>, can be called with either 2 or 3
+        parameters.
+        <br>
+        <br>
+        The end result will be the same, because regardless of how many parameters you pass to the function,
+        <br>
+        you will get the product of your parameters.
+    </p>
+
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            &nbsp
+            <code>
+                // Java program for Method overloading
+                <br>
+                <br>
+                class MultiplyFun {
+                <br>
+
+                &nbsp &nbsp // Method with 2 parameters
+                <br>
+                <br>
+                &nbsp &nbsp static int Multiply(int a, int b)
+                <br>
+                &nbsp &nbsp {
+                <br>
+                &nbsp &nbsp &nbsp &nbsp return a * b;
+                <br>
+                &nbsp &nbsp }
+                <br>
+
+                <br>
+                &nbsp &nbsp // Method with the same name but 3 parameters
+                <br>
+                <br>
+                &nbsp &nbsp static int Multiply(int a, int b, int c)
+                <br>
+                &nbsp &nbsp {
+                <br>
+                &nbsp &nbsp &nbsp &nbsp return a * b * c;
+                <br>
+                &nbsp &nbsp }
+            </code>
+
+        </div>
+    </div>
+    <br>
+    <p>Python has some built-in polymorphic functions like the <code>print()</code> function.</p>
+    <p>Regardless of what you pass through the <code>print()</code> function, you will get a result on the terminal.
+        <br>
+        You can pass a list, an integer, float, tuple, string, etc, and the <code>print()</code> function will
+        always work
+        <br>
+        in the same way. This is an example of polymorphism.
+    </p>
+    <br>
+
+
+    <h4>Abstraction</h4>
+    <hr>
+    <p>Abstraction allows the programmer to expose certain methods or variables. This makes
+        it easier for the end user, or for other programmers to understand your code.</p>
+    <p>This alone is one of the most important concepts of object-oriented programming</p>
+    <p>This reduces complexity for the end user, and also makes reading code much easier</p>
+    <p>Making code easy to read is the epitome of what programming should be because you will
+        always be collaborating with other people on big projects in the real world.</p>
+    <p>Abstraction is show in the calculator program shown below:</p>
+
+    <a class="btn btn-outline-danger"
+       href="https://github.com/kevnramos/calc2/blob/8ba2f9ccf489f753bf509d954b27620e2542ab1a/calc/calculator.py#L49-L54">Abstracting
+        away the <code>get()</code> method</a>
+
+    <br>
+    <br>
+
+    <a class="btn btn-outline-danger"
+       href="https://github.com/kevnramos/calc2/blob/8ba2f9ccf489f753bf509d954b27620e2542ab1a/calc/math_operations/division.py#L8-L17">Complex
+        <code>get()</code> method hidden here</a>
+
+
+    <br>
+    <br>
+
+</div>
+
+
+{% endblock %}

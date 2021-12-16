@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+<div class="container bg-light">
+    <br>
+    <h1 class="text-danger">Getting Started with Docker</h1>
+
+    <h4>Basic intro to Docker</h4>
+    <hr/>
+
+    <h3>Showing all your containers</h3>
+    <p>
+        There are a multitude of different docker commands that you can use
+    </p>
+    <p>You can run:</p>
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>docker ps -a</code>
+        </div>
+    </div>
+    <br/>
+    <p>to show all of the containers you currently have</p>
+    <br/>
+
+    <h3>Downloading an existing container</h3>
+    <p>
+        You can download containers from
+        <a href="https://hub.docker.com/">Docker Hub</a>
+    </p>
+    <p>We can run ubuntu from a docker container</p>
+    <p>To do so, we can simply run:</p>
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>docker pull ubunutu</code>
+        </div>
+    </div>
+    <br/>
+    <p>This will download the LTS version of ubunutu (currently v20.04)</p>
+    <br/>
+
+    <h3>Running the ubunutu image</h3>
+    <p>
+        To run the container that has ubuntu on it, we first need the name of
+        the container
+    </p>
+    <p>To get the name, we can do:</p>
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>docker ps -a</code>
+        </div>
+    </div>
+    <br/>
+    <p>
+        At this point you should see a list of containers, most likely only
+        one will appear because this is the first time you use docker
+    </p>
+    <p>run:</p>
+
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>docker start &lt;container_name&gt;</code>
+        </div>
+    </div>
+    <p>
+        Now that the container is started, we have to run it in order to get
+        into the ubuntu shell
+    </p>
+
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>docker run -it &lt;container_IMAGE_ID&gt;</code>
+        </div>
+    </div>
+
+    <br/>
+
+    <p>you can get the IMAGE_ID from</p>
+    <div class="card w-75">
+        <div class="card-body text-danger">
+            <code>docker ps</code>
+        </div>
+    </div>
+
+    <br/>
+
+    <p>
+        you should now be inside a full fledged ubunutu container Running
+        directly on your terminal
+    </p>
+    <br/>
+
+    <br/><br/>
+</div>
+
+
+{% endblock %}

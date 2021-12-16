@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+
+<div class="container bg-light">
+    <br>
+    <h1 class="text-danger">Command Line</h1>
+
+
+    <h4>Basic Commands</h4>
+    <hr>
+
+    <h4>Navigation</h4>
+
+    <p>We need to use command line to navigate our files and directories. This way, we can use important Git and
+        Docker functions
+        in the appropriate location.</p>
+
+    <p>This command shows us what our current working directory is. </p>
+    <div class="card">
+        <div class="card-body text-danger">
+            pwd
+        </div>
+    </div>
+
+    <p>To see what files and directories are in our current location, enter the following command. </p>
+    <div class="card">
+        <div class="card-body text-danger">
+            ls
+        </div>
+    </div>
+    <p>By seeing what files and directories are in our current location, we can then
+        navigate into those locations using the change directory command. To change to a specific directory enter
+        <b>cd</b> followed
+        by the directory name.</p>
+
+    <div class="card">
+        <div class="card-body text-danger">
+            cd <i>directory</i>
+        </div>
+
+    </div>
+
+    <p> We can also enter <b>cd</b> followed by hitting the tab button twice. This would show us which directories
+        we can enter.</p>
+
+    <p> We can also return to our home directory by just entering cd by itself. We can also move back
+        to our previous directory using this command.
+
+    <div class="card">
+        <div class="card-body text-danger">
+            cd ..
+        </div>
+    </div>
+
+    <br>
+
+
+    <h4>Making Changes</h4>
+
+
+    <p>To make a directory, use the command below.</p>
+    <div class="card">
+        <div class="card-body text-danger">
+            mkdir <i>directory_name</i>
+        </div>
+    </div>
+    <br>
+
+    <p>To make an empty file, use the command below.</p>
+    <div class="card">
+        <div class="card-body text-danger">
+            touch <i>file_name</i>
+        </div>
+    </div>
+    <br>
+
+    <p>To rename a file, use the command below.</p>
+    <div class="card">
+        <div class="card-body text-danger">
+            mv <i>file_name</i> <i>new_name</i>
+        </div>
+    </div>
+    <br>
+
+    <p>We can also move a file to a new location using this command.</p>
+    <div class="card">
+        <div class="card-body text-danger">
+            mv <i>file_name</i> <i>directory</i>
+        </div>
+    </div>
+    <br>
+
+
+    <p>Lastly, we can both move and rename a file at the same time.</p>
+    <div class="card">
+        <div class="card-body text-danger">
+            mv <i>file_name</i> <i>directory/new_name</i>
+        </div>
+    </div>
+    <br>
+
+
+    <br><br>
+
+</div>
+
+
+{% endblock %}

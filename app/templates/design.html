@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+
+<div class="container bg-light">
+    <br>
+    <h1 class="text-danger">Design techniques in Calculator</h1>
+    <h4>Separation of Concerns</h4>
+    <hr>
+
+    <h4>Basics</h4>
+    <p>Separation of concerns is a design idea used in computer science to divide a computer program into seperate
+        components. Each part focuses on a different issue.
+    </p>
+
+    <br>
+    <hr>
+
+    <h4>Perfect Example</h4>
+    <p>The perfect example for separation of concerns is a number of functions in a class.</p>
+    <p>These separate functions break down a program into simpler chunks, which lowers the chance for something to
+        go wrong, and makes it easier to fix and spot bugs.
+    </p>
+
+    <br>
+
+    <a class="btn btn-outline-danger"
+       href="https://github.com/kevnramos/calc2/blob/8ba2f9ccf489f753bf509d954b27620e2542ab1a/calc/calculator.py#L8-L26">
+        Example of Separation of Concerns
+    </a>
+
+    <br>
+    <br>
+    <hr>
+
+    <h4>Separating Calculator Operations</h4>
+    <p>Instead of having an Addition, Subtraction, Multiplication, and Division function inside a single class,
+        we separated it into different files.
+    </p>
+
+
+    <a class="btn btn-outline-danger"
+       href="https://github.com/kevnramos/calc2/blob/8ba2f9ccf489f753bf509d954b27620e2542ab1a/calc/calculator.py#L8-L26">
+        Separating Addition, Subtraction, Multiplication, Division
+    </a>
+
+
+    <br>
+    <br>
+
+</div>
+
+{% endblock %}
