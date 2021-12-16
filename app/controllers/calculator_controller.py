@@ -6,6 +6,7 @@ from calc.calculator import Calculator
 
 class CalculatorController(ControllerBase):
     """controller"""
+
     @staticmethod
     def post():
         """post functions"""
@@ -24,12 +25,13 @@ class CalculatorController(ControllerBase):
             getattr(Calculator, operation)(my_tuple)
             result = str(Calculator.get_last_calculation())
 
-            data = {
-                'value1': [value1],
-                'value2': [value2],
-                'operation': [operation],
-                'result': [result]
-            }
+            # data = {
+            #     'value1': [value1],
+            #     'value2': [value2],
+            #     'operation': [operation],
+            # }
+
+            data = [str(value1), str(value2), str(operation), result]
 
             Calculator.writeHistoryToCSV(data)
 

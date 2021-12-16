@@ -20,8 +20,9 @@ class Calculations:
     @staticmethod
     def writeHistoryToCSV(data):
         """Write the history to csv file"""
+        # data is a list so pd.Dataframe([list])
         df = pd.DataFrame(data)
-        df.to_csv("../../results/history.csv", mode='a', header=False)
+        df.to_csv("../../results/history.csv", index=False, mode='a', header=False)
 
     # pylint: disable=too-few-public-methods
     @staticmethod
